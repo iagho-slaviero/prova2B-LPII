@@ -1,20 +1,21 @@
 import { useState } from 'react';
 import { Container, Form, Row, Col, Button, FloatingLabel, Spinner } from 'react-bootstrap';
-import { adicionarUsuario, atualizarUsuario } from '../../redux/usuarioReducer';
+import { adicionarUsuario} from '../redux/usuarioReducer'
 import { useSelector, useDispatch } from 'react-redux';
+import { toast } from "react-toastify";
 import ESTADO from '../recursos/estado';
 
-export default function cadastroUsuario(props) {
+export default function CadastroUsuario(props) {
 
-    const usuarioVazia = {
+    const usuarioVazio = {
         nickname: '',
         url: '',
 
     }
-    const estadoInicialUsuario = props.usuarioParaEdicao;
-    const [usuario, setUsuario] = useState(estadoInicialUsuario);
-    const [formValidado, setFormValidado] = useState(false);
+
+    const [usuario, setUsuario] = useState(usuarioVazio);
     const { estado, mensagem, usuarios } = useSelector((state) => state.usuario);
+    const [formValidado, setFormValidado] = useState(false);
     const dispatch = useDispatch();
 
     function manipularMudancas(e) {
@@ -28,16 +29,7 @@ export default function cadastroUsuario(props) {
             if (!props.modoEdicao) {
                 dispatch(adicionarUsuario(usuario));
             }
-            else {
-                dispatch(atualizarUsuario(usuario));
-                props.setModoEdicao(false);
-                props.setUsuarioParaEdicao(usuarioVazia);
-            }
-            setUsuario(usuarioVazia);
-            setFormValidado(false);
-        }
-        else {
-            setFormValidado(true);
+            setUsuario(usuarioVazio);
         }
 
         e.stopPropagation();
@@ -108,13 +100,12 @@ export default function cadastroUsuario(props) {
                 </Row>
                 <Row>
                     <Col md={6} offset={5} className="d-flex justify-content-end">
-                        <Button type="submit" variant={"primary"}>{props.modoEdicao ? "Alterar" : "Cadastrar"}</Button>
-                    </Col>
-                    <Col md={6} offset={5}>
-                        <Button type="button" variant={"secondary"} onClick={() => {
-                            props.exibirFormulario(false)
-                        }
-                        }>Voltar</Button>
+                            <Button type="submit" variant={"primary"}>{"Cadastrar"}</Button>
+                        </Col>
+                        <Col md={6} offset={5}>
+                            <Button type="button" variant={"secondary"} onClick={() => {
+                            }
+                            }>Voltar</Button>
                     </Col>
                 </Row>
             </Form>
