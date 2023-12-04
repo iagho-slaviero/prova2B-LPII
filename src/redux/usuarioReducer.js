@@ -65,12 +65,6 @@ const estadoInicial = {
     usuarios: []
 }
 
-const initialState = {
-    estado: ESTADO.OCIOSO,
-    mensagem: "",
-    usuarios: []
-};
-
 const usuarioSlice = createSlice({
     name: 'usuario',
     initialState: estadoInicial,

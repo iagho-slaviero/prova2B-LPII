@@ -9,6 +9,7 @@ export default function Menu(props) {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link as={Link} to="/usuario">Usuarios</Nav.Link>
+
                     </Nav>
                 </Navbar.Collapse>
             </Container>

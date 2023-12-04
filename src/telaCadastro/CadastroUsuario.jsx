@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Container, Form, Row, Col, Button, FloatingLabel, Spinner } from 'react-bootstrap';
-import { adicionarUsuario} from '../redux/usuarioReducer'
+import { adicionarUsuario} from '../redux/usuarioReducer.js'
 import { useSelector, useDispatch } from 'react-redux';
 import { toast } from "react-toastify";
 import ESTADO from '../recursos/estado';
@@ -15,7 +15,6 @@ export default function CadastroUsuario(props) {
 
     const [usuario, setUsuario] = useState(usuarioVazio);
     const { estado, mensagem, usuarios } = useSelector((state) => state.usuario);
-    const [formValidado, setFormValidado] = useState(false);
     const dispatch = useDispatch();
 
     function manipularMudancas(e) {
@@ -57,7 +56,7 @@ export default function CadastroUsuario(props) {
         return (       
         <Container>
             <h2>Cadastro de Usuario</h2>
-            <Form noValidate validated={formValidado} onSubmit={manipularSubmissao}>
+            <Form >
                 <Row>
                     <Col>
                         <Form.Group>

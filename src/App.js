@@ -1,9 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import store from "./redux/store";
 import { Provider } from "react-redux";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import TelaUsuario from "./telaCadastro/TelaUsuario";
+import TelaChat from "./telaCadastro/TelaChat";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       <Provider store={store}>
         <BrowserRouter>
           <Routes>
-            <Route path="/usuario" element={<TelaUsuario/>} />
+            <Route path="/usuario" element={<TelaUsuario/>} />,
+            <Route path="/" element={<TelaChat/>} />
           </Routes>
         </BrowserRouter>
       </Provider>
