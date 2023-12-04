@@ -5,16 +5,12 @@ import Pagina from "../templates/Pagina";
 import { useState } from "react";
 
 export default function TelaUsuario(props) {
-    const [exibirCadastro, setExibirCadastro] = useState(false);
 
     return (
         <Container>
             <Pagina>
-                {
-                    exibirCadastro ? <CadastroUsuario/>
-                    :
-                    <TabelaUsuario />
-                }
+                <CadastroUsuario/>
+                <TabelaUsuario />
             </Pagina>
         </Container>
     )

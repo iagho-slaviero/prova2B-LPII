@@ -5,9 +5,6 @@ export default function Pagina(props) {
         <>
             <Menu />
             <div>
-                {
-
-                }
                 {props.children} 
             </div>
         </>
