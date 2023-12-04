@@ -59,6 +59,12 @@ export const adicionarUsuario = createAsyncThunk('usuario/adicionar', async (usu
     }
 });
 
+const estadoInicial = {
+    estado: ESTADO.OCIOSO,
+    mensagem: "",
+    usuarios: []
+}
+
 const initialState = {
     estado: ESTADO.OCIOSO,
     mensagem: "",

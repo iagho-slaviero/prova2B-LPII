@@ -4,7 +4,7 @@ import TabelaUsuario from "./TabelaUsuario";
 import Pagina from "../templates/Pagina";
 import { useState } from "react";
 
-export default function telaUsuario(props) {
+export default function TelaUsuario(props) {
     const [exibirCadastro, setExibirCadastro] = useState(false);
 
     return (

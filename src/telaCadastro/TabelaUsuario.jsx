@@ -1,10 +1,10 @@
 import { Button, Container, Spinner, Table } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
-import { buscarUsuario} from "../../redux/usuarioReducer";
+import { buscarUsuario} from "../redux/usuarioReducer";
 import { useEffect } from "react";
 import { toast } from "react-toastify";
 import ESTADO from "../recursos/estado";
-export default function tabelaUsuario(props) {
+export default function TabelaUsuario(props) {
 
     const { estado, mensagem, usuarios } = useSelector(state => state.usuario);
     const dispatch = useDispatch();
