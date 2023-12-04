@@ -143,7 +143,7 @@ const usuarioSlice = createSlice({
                 if (action.payload.status) {
                     state.estado = ESTADO.OCIOSO;
                     state.mensagem = action.payload.mensagem;
-                    state.usuario = action.payload.listaUsuario;
+                    state.usuarios = action.payload.listaUsuario;
                 } else {
                     state.estado = ESTADO.ERRO;
                     state.mensagem = action.payload.mensagem;

@@ -1,6 +1,5 @@
-
-import TelaMenu from "./telasCadastro/TelaMenu";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import telaUsuario from './telaCadastro/telaUsuario'
 import store from "./redux/store";
 import { Provider } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
@@ -15,9 +14,8 @@ function App() {
             {
               
             }
-            <Route path="/usuario" element={<TelaUsuario />} />
-            <Route path="/chat" element={<TelaChat />} />
-            <Route path="/" element={<TelaMenu />} />
+            <Route path="/usuario" element={<telaUsuario/>} />
+
             {
               
             }

@@ -2,6 +2,8 @@ import { Button, Container, Spinner, Table } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { buscarUsuario, removerUsuario } from "../../redux/usuarioReducer";
 import { useEffect } from "react";
+import { toast } from "react-toastify";
+import ESTADO from "../recursos/estado";
 export default function tabelaUsuario(props) {
 
     const { estado, mensagem, usuarios } = useSelector(state => state.usuario);
@@ -56,7 +58,7 @@ export default function tabelaUsuario(props) {
                     </thead>
                     <tbody>
                         {
-                            usuario.map((usuario) => {
+                            usuarios.map((usuario) => {
                                 return (<tr key={usuario.nickname}>
                                     <td>{usuario.nickname}</td>
                                     <td>{usuario.url}</td>

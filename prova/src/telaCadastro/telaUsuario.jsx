@@ -1,5 +1,6 @@
 import { Container } from "react-bootstrap";
 import cadastroUsuario from "./cadastroUsuario";
+import tabelaUsuario from "./tabelaUsuario";
 import { useState } from "react";
 
 export default function telaUsuario(props) {
@@ -14,7 +15,7 @@ export default function telaUsuario(props) {
         <Container>
             <Pagina>
                 {
-                    exibirFormulario ? <cadastroUsuario exibirCadastro={setExibirCadastro}
+                    exibirCadastro ? <cadastroUsuario exibirCadastro={setExibirCadastro}
                         usuarioParaEdicao={usuarioParaEdicao}
                         setUsuarioParaEdicao={setUsuarioParaEdicao}
                         modoEdicao={modoEdicao}
